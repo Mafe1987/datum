@@ -1,2 +1,14 @@
 const mongoose =require("mongoose")
-const url = "mongodb://localhost:27017/miBaseDeDatos"
+
+const connectDB = async()=>{
+try{ 
+  await mongoose.connect("mongodb+srv://william:123456wi@datum.tixcnfc.mongodb.net/?retryWrites=true&w=majority&appName=datum")
+console.log("mongoDB conectado exitosamente");
+
+} 
+  catch(error){
+    console.error("Error al conectar a mongo" , error)
+  }
+}
+connectDB()
+module.exports= connectDB
