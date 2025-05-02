@@ -2,8 +2,7 @@ const mongoose =require("mongoose")
 
 const connectDB = async()=>{
 try{ 
-  await mongoose.connect("mongodb+srv://william:123456wi@datum.tixcnfc.mongodb.net/?retryWrites=true&w=majority&appName=datum")
-console.log("mongoDB conectado exitosamente");
+  await mongoose.connect("mongodb+srv://william:123456wi@datum.tixcnfc.mongodb.net/?retryWrites=true&w=majority&appName=datum");
 
 } 
   catch(error){

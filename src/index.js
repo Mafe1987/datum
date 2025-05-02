@@ -14,7 +14,7 @@ app.get("/", (req,res)=>{
 })
 const PORT=3000;
 //ruta de usuarios
-app.use("/api/usuarios", usuarioRoutes)
+app.use("/api/usuarios", usuarioRoutes);
 //iniciar el servidor
 app.listen(PORT,()=>{
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

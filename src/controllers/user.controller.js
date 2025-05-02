@@ -81,6 +81,36 @@ const eliminarUsuario = async(req, res) => {
         });
     }
 };
+const verificarCredenciales=async[req, res]=>{
+    try{
+        const{email,contraseña}=req.body
+        if(!email || !contraseña){
+            return res.status(400).json({
+                exito:false,
+                mensaje:"Email y contraseña requeridos"
+            });
+        }
+        const resultados=await usuarioService.verificarCredenciales(email,contraseña)
+        if(!resultados.exito){
+            return res.status(401).json({
+                exito:false,
+                mensaje:resultados.mensaje
+            });
+        }
+        return res.status(200).json({
+            exito:true,
+            mensaje:"Credenciales correctas",
+            
+        })
+    }
+    catch(error){
+        res.status(500).json({
+            exitos:false,
+            mensaje:"error al verificar credenciales",
+            error:error.mensaje,
+        })
+    }
+}
 module.exports={
     crearUsuario,
     obtenerUsuarios,

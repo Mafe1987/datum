@@ -5,7 +5,7 @@ const{
     obtenerUsuarios,
     actualizarUsuario,
     eliminarUsuario,
-
+    verificarCredenciales
 }= require("../controllers/user.controller");
 const router=express.Router();
 //ruta para crear nuevo usuario
