@@ -1,6 +1,6 @@
 const usuarioService = require("../services/user.service");
 //crear usuario nuevo
-const crearUsuario = async (req,res) =>{
+const crearUsuario = async (req, res) =>{
     try{
         const nuevoUsuario = await usuarioService.crearUsuario(req.body);
         res.status(201).json({
@@ -17,7 +17,7 @@ const crearUsuario = async (req,res) =>{
 };
 //obtener todos los usuarios
 
-const obtenerUsuarios = async (req,res) => {
+const obtenerUsuarios = async (req, res) => {
     try{
         const usuarios = await usuarioService.obtenerUsuarios();
         res.status(200).json({
@@ -81,7 +81,7 @@ const eliminarUsuario = async(req, res) => {
         });
     }
 };
-const verificarCredenciales=async[req, res]=>{
+const verificarCredenciales=async(req, res) => {
     try{
         const{email,contraseña}=req.body
         if(!email || !contraseña){
